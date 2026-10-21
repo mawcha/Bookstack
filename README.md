@@ -50,9 +50,6 @@ Aplikasi dijalankan pada Ubuntu Server 24.04 dengan Apache sebagai web server, M
 | PHP | Menjalankan aplikasi BookStack |
 | BookStack | Aplikasi dokumentasi berbasis web |
 | DNS | Mengarahkan domain ke IP publik VPS |
-| Let's Encrypt | Menyediakan sertifikat TLS untuk HTTPS |
-| Certbot | Membantu memperoleh dan memperpanjang sertifikat |
-| GitHub | Menyimpan dokumentasi proyek |
 
 ## 4. Arsitektur Sistem
 
