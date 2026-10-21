@@ -11,9 +11,10 @@ Dokumentasi proyek mata kuliah **Komunikasi Data dan Jaringan Komputer (KDJK)** 
 5. [Informasi Deployment](#5-informasi-deployment)
 6. [Persiapan VPS](#6-persiapan-vps)
 7. [Instalasi BookStack](#7-instalasi-bookstack)
-8. [Cara Mengakses BookStack](#8-cara-mengakses-bookstack)
-9. [Keamanan dan Pemeliharaan](#9-keamanan-dan-pemeliharaan)
-10. [Dokumentasi dan Referensi](#10-dokumentasi-dan-referensi)
+8. [Cara Penggunaan BookStack](#8-cara-penggunaan-bookstack)
+9. [Cara Mengakses BookStack](#8-cara-mengakses-bookstack)
+10. [Keamanan dan Pemeliharaan](#9-keamanan-dan-pemeliharaan)
+11. [Dokumentasi dan Referensi](#10-dokumentasi-dan-referensi)
 
 ---
 
@@ -39,6 +40,8 @@ Aplikasi dijalankan pada Ubuntu Server 24.04 dengan Apache sebagai web server, M
 
 **Aplikasi:** https://kelompoksatu.cloud
 
+---
+
 ## 3. Teknologi yang Digunakan
 
 | Teknologi | Fungsi |
@@ -50,6 +53,8 @@ Aplikasi dijalankan pada Ubuntu Server 24.04 dengan Apache sebagai web server, M
 | PHP | Menjalankan aplikasi BookStack |
 | BookStack | Aplikasi dokumentasi berbasis web |
 | DNS | Mengarahkan domain ke IP publik VPS |
+
+---
 
 ## 4. Arsitektur Sistem
 
@@ -85,6 +90,8 @@ Penjelasan:
 5. BookStack memproses permintaan dan berinteraksi dengan database MySQL jika diperlukan.
 6. Hasil pemrosesan dikirim kembali kepada pengguna melalui browser.
 
+---
+
 ## 5. Informasi Deployment
 
 | Komponen | Konfigurasi |
@@ -96,6 +103,8 @@ Penjelasan:
 | Web server | Apache |
 | Database | MySQL |
 | Aplikasi | BookStack |
+
+---
 
 ## 6. Persiapan VPS
 
@@ -138,6 +147,7 @@ Perintah pemeriksaan layanan lain:
 systemctl status ssh
 systemctl status apache2
 ```
+---
 
 ## 7. Instalasi BookStack
 
@@ -165,7 +175,61 @@ Jalankan skrip dengan domain atau alamat yang digunakan untuk mengakses aplikasi
 
 Skrip instalasi mengatur komponen yang dibutuhkan BookStack, termasuk Apache, MySQL, PHP, dependensi aplikasi, dan konfigurasi web server.
 
-## 8. Cara Mengakses BookStack
+## 8 Cara Penggunaan BookStack
+
+### 8.1 Login ke BookStack
+
+Buka URL BookStack melalui browser, kemudian masukkan username dan password akun yang telah diberikan oleh administrator.
+
+<img width="1600" height="849" alt="WhatsApp Image 2026-10-20 at 3 50 35 PM" src="https://github.com/user-attachments/assets/b853e9fb-e12a-4110-b2da-b5b08783dce5" />
+
+
+### 8.2 Tampilan Setelah Login
+
+Setelah berhasil login, pengguna akan diarahkan ke halaman utama BookStack. Pada halaman ini, pengguna dapat melihat dokumentasi yang tersedia serta mengakses fitur untuk membuat dan mengelola konten, sesuai dengan hak akses akun.
+
+<img width="1861" height="967" alt="image" src="https://github.com/user-attachments/assets/60d02c77-cb19-419d-9230-0fc910c9e1f9" />
+
+### 3. Membuat Book
+
+Book digunakan sebagai wadah utama untuk mengelompokkan dokumentasi berdasarkan topik tertentu. Misalnya, pengguna dapat membuat satu Book untuk dokumentasi praktikum, panduan aplikasi, atau materi perkuliahan.
+
+Langkah-langkah:
+1. Buka halaman utama BookStack.
+2. Pilih menu atau tombol untuk membuat Book baru.
+3. Masukkan nama Book dan informasi pendukung jika diperlukan.
+4. Simpan Book yang telah dibuat.
+
+<img width="1920" height="1080" alt="Untitled design" src="https://github.com/user-attachments/assets/c18e1db4-0b1a-4e8e-b917-f06aca760d20" />
+
+### 8.4 Membuat Chapter
+
+Chapter digunakan untuk membagi isi Book menjadi beberapa bagian berdasarkan subtopik agar dokumentasi lebih terstruktur.
+
+Langkah-langkah:
+1. Buka Book yang ingin dikelola.
+2. Pilih opsi untuk menambahkan Chapter.
+3. Masukkan nama Chapter.
+4. Simpan Chapter.
+
+<img width="1920" height="1080" alt="Tulis isi dokumentasi" src="https://github.com/user-attachments/assets/fe446c28-4f17-421d-ba94-4894b6b80187" />
+
+### 8.5 Membuat Page Baru
+
+Page merupakan tempat untuk menulis isi dokumentasi secara lebih rinci. Page dapat berisi teks, gambar, tabel, tautan, dan elemen pendukung lainnya.
+
+Langkah-langkah:
+1. Buka Book dan Chapter yang sesuai.
+2. Pilih opsi untuk membuat Page baru.
+3. Masukkan judul Page.
+4. Tulis isi dokumentasi menggunakan editor yang tersedia.
+5. Simpan atau terbitkan Page sesuai opsi yang ditampilkan.
+
+<img width="1920" height="1080" alt="Tulis isi dokumentasi (1)" src="https://github.com/user-attachments/assets/0c56be68-89c3-41ed-ab61-39efc5c8ea74" />
+
+---
+
+## 9. Cara Mengakses BookStack
 
 1. Buka https://kelompoksatu.cloud.
 2. Masukkan email atau username dan password akun yang telah dikonfigurasi.
@@ -174,7 +238,7 @@ Skrip instalasi mengatur komponen yang dibutuhkan BookStack, termasuk Apache, My
 
 Kredensial administrator tidak dicantumkan dalam README ini. Gunakan akun yang telah diamankan dan jangan membagikan password melalui repository publik.
 
-## 9. Keamanan dan Pemeliharaan
+## 10. Keamanan dan Pemeliharaan
 
 Hal-hal yang perlu diperhatikan setelah deployment:
 
@@ -187,15 +251,12 @@ Hal-hal yang perlu diperhatikan setelah deployment:
 - Pantau masa berlaku sertifikat dan pastikan auto-renew berjalan.
 - Jangan mengubah konfigurasi Apache, database, atau aplikasi tanpa backup apabila perubahan berisiko mengganggu layanan.
 
-## 10. Dokumentasi dan Referensi
+## 11. Dokumentasi dan Referensi
 
 - [BookStack — Website Resmi](https://www.bookstackapp.com/)
 - [BookStack — Dokumentasi Resmi](https://www.bookstackapp.com/docs/)
 - [BookStack — Repositori Sumber](https://github.com/BookStackApp/BookStack)
 - [BookStack DevOps Scripts](https://codeberg.org/bookstack/devops)
 - [Ubuntu Server Documentation](https://documentation.ubuntu.com/server/)
-
-**Mata Kuliah:** Komunikasi Data dan Jaringan Komputer (KDJK)  
-**Platform:** BookStack  
 **Deployment:** Rumahweb VPS — Ubuntu Server 24.04  
 **Domain:** https://kelompoksatu.cloud
