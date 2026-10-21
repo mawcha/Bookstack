@@ -15,7 +15,7 @@
 
 ---
 
-## 1. Sekilas Tentang
+## Sekilas Tentang
 
 [`^ kembali ke atas ^`](#)
 
@@ -29,7 +29,7 @@ Aplikasi dijalankan pada Ubuntu Server 24.04 dengan Apache sebagai web server, M
 
 ---
 
-## 2. Instalasi
+## Instalasi
 
 [`^ kembali ke atas ^`](#)
 
