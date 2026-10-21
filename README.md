@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="Tulis isi dokumentasi (2)" src="https://github.com/user-attachments/assets/347e2460-d16d-4bb4-8e78-30797d20847e" /># Bookstack
+# Bookstack
 
 ## Daftar Isi
 
