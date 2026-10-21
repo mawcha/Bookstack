@@ -1,23 +1,9 @@
 # Bookstack
 
-## Daftar Isi
+<img width="521" height="182" alt="image" src="https://github.com/user-attachments/assets/7e9837c4-51f6-4dd3-b8c6-519d435497bb" />
 
-1. [Anggota Kelompok](#1-anggota-kelompok)
-2. [Deskripsi Proyek](#2-deskripsi-proyek)
-3. [Teknologi yang Digunakan](#3-teknologi-yang-digunakan)
-4. [Arsitektur Sistem](#4-arsitektur-sistem)
-5. [Informasi Deployment](#5-informasi-deployment)
-6. [Persiapan VPS](#6-persiapan-vps)
-7. [Instalasi BookStack](#7-instalasi-bookstack)
-8. [Konfigurasi](#8-konfigurasi)
-9. [Cara Penggunaan BookStack](#9-cara-penggunaan-bookstack)
-10. [Cara Mengakses BookStack](#10-cara-mengakses-bookstack)
-11. [Keamanan dan Pemeliharaan](#11-keamanan-dan-pemeliharaan)
-12. [Pembahasan](#12-pembahasan)
-13. [Dokumentasi dan Referensi](#13-dokumentasi-dan-referensi)
----
 
-## 1. Anggota Kelompok
+## Anggota Kelompok
 
 | No. | Nama | NIM |
 |---|---|---|
@@ -29,7 +15,9 @@
 
 ---
 
-## 2. Deskripsi Proyek
+## 1. Sekilas Tentang
+
+[`^ kembali ke atas ^`](#)
 
 BookStack merupakan aplikasi dokumentasi berbasis web yang dapat digunakan untuk menyimpan, menyusun, dan mengelola informasi secara terstruktur. Konten di BookStack disusun menggunakan hierarki buku (*books*), bab (*chapters*), dan halaman (*pages*).
 
@@ -41,163 +29,190 @@ Aplikasi dijalankan pada Ubuntu Server 24.04 dengan Apache sebagai web server, M
 
 ---
 
-## 3. Teknologi yang Digunakan
+## 2. Instalasi
 
-| Teknologi | Fungsi |
-|---|---|
-| Rumahweb VPS | Menyediakan server untuk deployment aplikasi |
-| Ubuntu Server 24.04 | Sistem operasi server |
-| Apache HTTP Server | Menerima dan melayani permintaan HTTP/HTTPS |
-| MySQL | Menyimpan data aplikasi |
-| PHP | Menjalankan aplikasi BookStack |
-| BookStack | Aplikasi dokumentasi berbasis web |
-| DNS | Mengarahkan domain ke IP publik VPS |
+[`^ kembali ke atas ^`](#)
+
+#### Kebutuhan Sistem
+
+Sistem yang digunakan dalam proyek ini meliputi:
+
+- VPS dari Rumahweb.
+- Ubuntu Server 24.04 LTS.
+- Akses SSH dan hak akses administrator.
+- Apache sebagai web server.
+- PHP untuk menjalankan aplikasi BookStack.
+- MySQL sebagai database.
+- Domain yang diarahkan ke IP VPS.
+- Koneksi internet untuk proses instalasi dan akses aplikasi.
+
+#### Proses Instalasi
+
+1. **Login ke VPS menggunakan SSH.**
+
+   Hubungkan ke server menggunakan terminal:
+
+   ```bash
+   ssh root@202.10.Kebutuhan Sistem
+   ```
+
+   Sistem yang digunakan dalam proyek ini meliputi:
+
+   - VPS dari Rumahweb.
+   - Ubuntu Server 24.04 LTS.
+   - Akses SSH dan hak akses administrator.
+   - Apache sebagai web server.
+   - PHP untuk menjalankan aplikasi BookStack.
+   - MySQL sebagai database.
+   - Domain yang diarahkan ke IP VPS.
+   - Koneksi internet untuk proses instalasi dan akses aplikasi.
+
+   #### 40.194
+
+   Sesuaikan username jika server menggunakan akun selain `root`.
+
+2. **Perbarui daftar paket sistem.**
+
+   ```bash
+   sudo apt update
+   sudo apt upgrade -y
+   ```
+
+3. **Unduh installer BookStack untuk Ubuntu 24.04.**
+
+   ```bash
+   wget https://codeberg.org/bookstack/devops/raw/branch/main/scripts/installation-ubuntu-24.04.sh
+   ```
+
+4. **Jalankan installer.**
+
+   ```bash
+   chmod +x installation-ubuntu-24.04.sh
+   sudo ./installation-ubuntu-24.04.sh 202.10.40.194
+   ```
+
+   Installer tersebut digunakan untuk membantu proses instalasi BookStack beserta konfigurasi yang diperlukan. Pastikan membaca instruksi installer sebelum menjalankannya.
+
+5. **Arahkan domain ke IP VPS.**
+
+   Pada pengaturan DNS domain, tambahkan record berikut:
+
+   | Type | Name | Value           |
+   | ---- | ---- | --------------- |
+   | A    | `@`  | `202.10.40.194` |
+
+   Pastikan domain sudah mengarah ke IP VPS sebelum melanjutkan konfigurasi HTTPS.
+
+6. **Konfigurasi URL aplikasi.**
+
+   Buka file konfigurasi BookStack:
+
+   ```bash
+   sudo nano /var/www/bookstack/.env
+   ```
+
+   Pastikan nilai `APP_URL` sesuai dengan domain yang digunakan:
+
+   ```env
+   APP_URL=https://kelompoksatu.cloud
+   ```
+
+   Simpan perubahan, kemudian bersihkan cache konfigurasi:
+
+   ```bash
+   cd /var/www/bookstack
+   sudo php artisan config:clear
+   ```
+
+  
+---
+
+# Konfigurasi
+
+[`^ kembali ke atas ^`](#)
+
+Setelah instalasi selesai, BookStack dapat dikonfigurasi melalui halaman aplikasi maupun file konfigurasi pada server.
+
+- **Konfigurasi aplikasi:** pengguna dapat mengelola buku, chapter, halaman dokumentasi, serta pengaturan yang tersedia sesuai hak akses akun.
+- **Konfigurasi URL:** alamat aplikasi ditentukan melalui variabel `APP_URL` dalam file `.env`.
+- **Konfigurasi database:** BookStack menggunakan database untuk menyimpan informasi aplikasi. Kredensial database harus dijaga kerahasiaannya dan tidak boleh dicantumkan dalam dokumentasi publik.
+- **Pengaturan pengguna:** administrator dapat mengelola akun dan hak akses agar dokumentasi dapat dikelola sesuai kebutuhan.
+
+Untuk informasi lebih lanjut mengenai pengaturan BookStack, kunjungi [dokumentasi resmi BookStack](https://www.bookstackapp.com/docs/).
 
 ---
 
-## 4. Arsitektur Sistem
+# Maintenance
 
-Alur akses aplikasi:
+[`^ kembali ke atas ^`](#)
 
-```text
-Pengguna
-   |
-   | HTTPS
-   v
-kelompoksatu.cloud
-   |
-   | DNS A Record
-   v
-IP Publik VPS
-   |
-   v
-Apache Web Server
-   |
-   v
-BookStack (PHP)
-   |
-   v
-MySQL Database
-```
+Maintenance dilakukan untuk menjaga ketersediaan aplikasi, keamanan server, dan integritas data.
 
-Penjelasan:
+1. **Memeriksa status web server.**
 
-1. Pengguna membuka domain melalui browser.
-2. DNS menerjemahkan domain menjadi alamat IP publik VPS.
-3. Apache menerima koneksi HTTP atau HTTPS.
-4. Apache meneruskan permintaan ke aplikasi BookStack.
-5. BookStack memproses permintaan dan berinteraksi dengan database MySQL jika diperlukan.
-6. Hasil pemrosesan dikirim kembali kepada pengguna melalui browser.
+   ```bash
+   sudo systemctl status apache2
+   ```
+
+2. **Memeriksa pembaruan paket.**
+
+   ```bash
+   sudo apt update
+   apt list --upgradable
+   ```
+
+3. **Melakukan backup.**
+
+   Backup perlu mencakup database MySQL dan file BookStack yang diperlukan, termasuk konfigurasi serta file unggahan. Simpan salinan backup di lokasi terpisah dari VPS dan uji proses pemulihannya secara berkala.
+
+4. **Menjaga keamanan server.**
+
+   Gunakan kata sandi yang kuat, batasi akses SSH, lakukan pembaruan keamanan secara berkala, dan jangan membagikan file `.env` atau kredensial database.
+
+Langkah-langkah di atas merupakan prosedur pemeliharaan. Backup otomatis tidak dianggap aktif sebelum mekanisme pencadangan benar-benar dikonfigurasi dan diuji.
 
 ---
 
-## 5. Informasi Deployment
+# Otomatisasi
 
-| Komponen | Konfigurasi |
-|---|---|
-| Provider VPS | Rumahweb |
-| Sistem operasi | Ubuntu Server 24.04 |
-| Domain | `kelompoksatu.cloud` |
-| IP publik IPv4 | `202.10.40.194` |
-| Web server | Apache |
-| Database | MySQL |
-| Aplikasi | BookStack |
+[`^ kembali ke atas ^`](#)
 
----
+Proses instalasi aplikasi dapat dibantu menggunakan **shell script**, yaitu file berisi kumpulan perintah yang dijalankan secara berurutan melalui terminal.
 
-## 6. Persiapan VPS
+Pada proyek ini, file `setup.sh` disediakan untuk membantu mengotomatisasi proses setup BookStack pada VPS Ubuntu Server 24.04.
 
-### 6.1 Mengakses VPS
+File tersebut dapat dilihat melalui repository:
 
-VPS dapat diakses melalui SSH menggunakan terminal. Pada Windows PowerShell, jalankan:
+[setup.sh — BookStack](https://github.com/mawcha/Bookstack/blob/main/setup.sh)
+
+Sebelum menjalankan script, pastikan VPS memenuhi kebutuhan sistem dan periksa isi script untuk memahami tindakan yang akan dilakukan.
+
+Contoh cara menjalankan script pada VPS baru, apabila file sudah tersedia di server:
 
 ```bash
-ssh root@202.10.40.194
-```
-
-Masukkan password root ketika diminta. Untuk penggunaan jangka panjang, disarankan menggunakan SSH key dan membatasi akses root secara langsung setelah akses alternatif yang aman tersedia.
-
-### 6.2 Memperbarui sistem
-
-Setelah berhasil masuk ke server, perbarui daftar paket dan paket yang terpasang:
-
-```bash
-apt update
-apt upgrade -y
+chmod +x setup.sh
+sudo ./setup.sh kelompoksatu.cloud 202.10.40.194
 ```
 ---
 
-## 7. Instalasi BookStack
+## Cara Pemakaian
 
-Instalasi dilakukan menggunakan skrip instalasi Ubuntu 24.04 dari repositori pengelola BookStack.
+[`^ kembali ke atas ^`](#)
 
-### 7.1 Mengunduh skrip instalasi
-
-```bash
-wget https://codeberg.org/bookstack/devops/raw/branch/main/scripts/installation-ubuntu-24.04.sh
-```
-
-### 7.2 Memberikan izin eksekusi
-
-```bash
-chmod +x installation-ubuntu-24.04.sh
-```
-
-### 7.3 Menjalankan instalasi
-
-Jalankan skrip dengan domain atau alamat yang digunakan untuk mengakses aplikasi:
-
-```bash
-./installation-ubuntu-24.04.sh 202.10.40.194
-```
-
-Skrip instalasi mengatur komponen yang dibutuhkan BookStack, termasuk Apache, MySQL, PHP, dependensi aplikasi, dan konfigurasi web server.
-
----
-## 8. Konfigurasi
-
-### 8.1 Konfigurasi DNS
-
-Domain `kelompoksatu.cloud` diarahkan ke alamat IPv4 VPS menggunakan DNS record tipe A. Dengan konfigurasi ini, pengguna dapat mengakses aplikasi menggunakan nama domain.
-
-### 8.2 Konfigurasi URL BookStack
-
-URL aplikasi dikonfigurasi melalui file `.env` pada direktori instalasi BookStack.
-
-```bash
-cd /var/www/bookstack
-nano .env
-```
-
-Nilai `APP_URL` disesuaikan menjadi:
-
-```dotenv
-APP_URL=https://kelompoksatu.cloud
-```
-
-Setelah perubahan disimpan, konfigurasi aplikasi dibersihkan menggunakan:
-
-```bash
-php artisan config:clear
-```
----
-
-## 9. Cara Penggunaan BookStack
-
-### 9.1 Login ke BookStack
+### Login ke BookStack
 
 Buka URL BookStack melalui browser, kemudian masukkan username dan password akun yang telah diberikan oleh administrator.
 
 <img width="1600" height="849" alt="WhatsApp Image 2026-10-20 at 3 50 35 PM" src="https://github.com/user-attachments/assets/b853e9fb-e12a-4110-b2da-b5b08783dce5" />
 
 
-### 9.2 Tampilan Setelah Login
+### Tampilan Setelah Login
 
 Setelah berhasil login, pengguna akan diarahkan ke halaman utama BookStack. Pada halaman ini, pengguna dapat melihat dokumentasi yang tersedia serta mengakses fitur untuk membuat dan mengelola konten, sesuai dengan hak akses akun.
 
 <img width="1861" height="967" alt="image" src="https://github.com/user-attachments/assets/60d02c77-cb19-419d-9230-0fc910c9e1f9" />
 
-### 9.3 Membuat Book
+### Membuat Book
 
 Book digunakan sebagai wadah utama untuk mengelompokkan dokumentasi berdasarkan topik tertentu. Misalnya, pengguna dapat membuat satu Book untuk dokumentasi praktikum, panduan aplikasi, atau materi perkuliahan.
 
@@ -209,7 +224,7 @@ Langkah-langkah:
 
 <img width="1920" height="1080" alt="Tulis isi dokumentasi (2)" src="https://github.com/user-attachments/assets/0282e65a-c44d-4b48-abc6-eb4c7765e186" />
 
-### 9.4 Membuat Chapter
+### Membuat Chapter
 
 Chapter digunakan untuk membagi isi Book menjadi beberapa bagian berdasarkan subtopik agar dokumentasi lebih terstruktur.
 
@@ -221,7 +236,7 @@ Langkah-langkah:
 
 <img width="1920" height="1080" alt="Tulis isi dokumentasi" src="https://github.com/user-attachments/assets/fe446c28-4f17-421d-ba94-4894b6b80187" />
 
-### 9.5 Membuat Page Baru
+### Membuat Page Baru
 
 Page merupakan tempat untuk menulis isi dokumentasi secara lebih rinci. Page dapat berisi teks, gambar, tabel, tautan, dan elemen pendukung lainnya.
 
@@ -236,70 +251,21 @@ Langkah-langkah:
 
 ---
 
-## 10. Cara Mengakses BookStack
+## Pembahasan
 
-1. Buka https://kelompoksatu.cloud.
-2. Masukkan email atau username dan password akun yang telah dikonfigurasi.
-3. Setelah berhasil masuk, pengguna dapat mengakses konten sesuai izin akun.
-4. Untuk membuat dokumentasi, gunakan struktur Books, Chapters, dan Pages.
-
----
-
-## 11. Keamanan dan Pemeliharaan
-
-Pemeliharaan diperlukan untuk menjaga keamanan, ketersediaan, dan integritas data BookStack.
-
-### 11.1 Memeriksa Layanan Apache
-
-Status web server dapat diperiksa dengan:
-
-```bash
-systemctl status apache2
-```
-
-Jika layanan berjalan normal, statusnya akan menunjukkan `active (running)`.
-
-### 11.2 Pembaruan Sistem
-
-Daftar paket dapat diperbarui dan paket yang tersedia dapat diperiksa menggunakan:
-
-```bash
-apt update
-apt list --upgradable
-```
-
-Pembaruan sebaiknya dilakukan secara berkala setelah memeriksa perubahan yang tersedia dan memastikan terdapat backup yang dapat dipulihkan.
-
-### 11.3 Backup dan Pemulihan
-
-Database dan file yang diperlukan BookStack perlu dicadangkan secara berkala. Backup perlu disimpan di lokasi yang terpisah dari VPS agar tetap tersedia apabila server mengalami gangguan.
-
-Prosedur backup harus mencakup:
-- Database MySQL BookStack.
-- File unggahan dan data aplikasi yang diperlukan.
-- File konfigurasi yang diperlukan untuk pemulihan, dengan menjaga kerahasiaan kredensial.
-
-Backup harus diuji melalui proses pemulihan pada lingkungan yang aman. Jadwal backup otomatis perlu dikonfigurasi secara terpisah sebelum dinyatakan aktif.
-
-### 11.4 Keamanan Akses
-
-- Gunakan password yang kuat dan unik.
-- Batasi akses SSH hanya kepada pihak yang memerlukan.
-- Pertimbangkan SSH key dan pembatasan login root setelah akses alternatif yang aman tersedia.
-- Buka hanya port jaringan yang diperlukan.
-- Jangan menyimpan password, private key, atau kredensial database di repository GitHub.
-
----
-
-## 12. Pembahasan
+[`^ kembali ke atas ^`](#)
 
 
 ---
 
-## 13. Dokumentasi dan Referensi
+## Referensi
+
+[`^ kembali ke atas ^`](#)
 
 - [BookStack — Website Resmi](https://www.bookstackapp.com/)
 - [BookStack — Dokumentasi Resmi](https://www.bookstackapp.com/docs/)
 - [BookStack — Repositori Sumber](https://github.com/BookStackApp/BookStack)
 - [BookStack DevOps Scripts](https://codeberg.org/bookstack/devops)
 - [Ubuntu Server Documentation](https://documentation.ubuntu.com/server/)
+
+  
