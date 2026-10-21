@@ -182,31 +182,6 @@ Setelah perubahan disimpan, konfigurasi aplikasi dibersihkan menggunakan:
 ```bash
 php artisan config:clear
 ```
-
-### 8.3 Konfigurasi HTTPS
-
-HTTPS dikonfigurasi menggunakan Certbot dengan sertifikat dari Let's Encrypt. Sertifikat memungkinkan komunikasi antara browser dan server berlangsung melalui koneksi terenkripsi.
-
-Perintah yang digunakan:
-
-```bash
-certbot --apache -d kelompoksatu.cloud
-```
-
-Sertifikat dikelola oleh Certbot. Status sertifikat dapat diperiksa menggunakan:
-
-```bash
-certbot certificates
-```
-
-Pengujian proses pembaruan sertifikat dapat dilakukan dengan:
-
-```bash
-certbot renew --dry-run
-```
-
-Perintah tersebut menguji mekanisme pembaruan tanpa mengganti sertifikat aktif.
-
 ---
 
 ## 9. Cara Penggunaan BookStack
@@ -235,7 +210,6 @@ Langkah-langkah:
 4. Simpan Book yang telah dibuat.
 
 <img width="1920" height="1080" alt="Tulis isi dokumentasi (2)" src="https://github.com/user-attachments/assets/0282e65a-c44d-4b48-abc6-eb4c7765e186" />
-
 
 ### 9.4 Membuat Chapter
 
@@ -287,21 +261,7 @@ systemctl status apache2
 
 Jika layanan berjalan normal, statusnya akan menunjukkan `active (running)`.
 
-### 11.2 Memeriksa Sertifikat HTTPS
-
-Periksa informasi sertifikat menggunakan:
-
-```bash
-certbot certificates
-```
-
-Uji mekanisme pembaruan sertifikat menggunakan:
-
-```bash
-certbot renew --dry-run
-```
-
-### 11.3 Pembaruan Sistem
+### 11.2 Pembaruan Sistem
 
 Daftar paket dapat diperbarui dan paket yang tersedia dapat diperiksa menggunakan:
 
@@ -312,7 +272,7 @@ apt list --upgradable
 
 Pembaruan sebaiknya dilakukan secara berkala setelah memeriksa perubahan yang tersedia dan memastikan terdapat backup yang dapat dipulihkan.
 
-### 11.4 Backup dan Pemulihan
+### 11.3 Backup dan Pemulihan
 
 Database dan file yang diperlukan BookStack perlu dicadangkan secara berkala. Backup perlu disimpan di lokasi yang terpisah dari VPS agar tetap tersedia apabila server mengalami gangguan.
 
@@ -323,7 +283,7 @@ Prosedur backup harus mencakup:
 
 Backup harus diuji melalui proses pemulihan pada lingkungan yang aman. Jadwal backup otomatis perlu dikonfigurasi secara terpisah sebelum dinyatakan aktif.
 
-### 11.5 Keamanan Akses
+### 11.4 Keamanan Akses
 
 - Gunakan password yang kuat dan unik.
 - Batasi akses SSH hanya kepada pihak yang memerlukan.
