@@ -261,5 +261,3 @@ Hal-hal yang perlu diperhatikan setelah deployment:
 - [BookStack — Repositori Sumber](https://github.com/BookStackApp/BookStack)
 - [BookStack DevOps Scripts](https://codeberg.org/bookstack/devops)
 - [Ubuntu Server Documentation](https://documentation.ubuntu.com/server/)
-**Deployment:** Rumahweb VPS — Ubuntu Server 24.04  
-**Domain:** https://kelompoksatu.cloud
