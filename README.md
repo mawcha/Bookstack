@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Bookstack
 
 <img width="521" height="182" alt="image" src="https://github.com/user-attachments/assets/7e9837c4-51f6-4dd3-b8c6-519d435497bb" />
@@ -17,7 +19,7 @@
 
 ## Sekilas Tentang
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 BookStack merupakan aplikasi dokumentasi berbasis web yang dapat digunakan untuk menyimpan, menyusun, dan mengelola informasi secara terstruktur. Konten di BookStack disusun menggunakan hierarki buku (*books*), bab (*chapters*), dan halaman (*pages*).
 
@@ -31,7 +33,7 @@ Aplikasi dijalankan pada Ubuntu Server 24.04 dengan Apache sebagai web server, M
 
 ## Instalasi
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 #### Kebutuhan Sistem
 
@@ -116,7 +118,7 @@ Sistem yang digunakan dalam proyek ini meliputi:
 
 # Konfigurasi
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 Setelah instalasi selesai, BookStack dapat dikonfigurasi melalui halaman aplikasi maupun file konfigurasi pada server.
 
@@ -129,7 +131,7 @@ Setelah instalasi selesai, BookStack dapat dikonfigurasi melalui halaman aplikas
 
 # Maintenance
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 Maintenance dilakukan untuk menjaga ketersediaan aplikasi, keamanan server, dan integritas data.
 
@@ -160,7 +162,7 @@ Langkah-langkah di atas merupakan prosedur pemeliharaan. Backup otomatis tidak d
 
 # Otomatisasi
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 Proses instalasi aplikasi dapat dibantu menggunakan **shell script**, yaitu file berisi kumpulan perintah yang dijalankan secara berurutan melalui terminal.
 
@@ -182,7 +184,7 @@ sudo ./setup.sh kelompoksatu.cloud 202.10.40.194
 
 ## Cara Pemakaian
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 ### Login ke BookStack
 
@@ -238,14 +240,14 @@ Langkah-langkah:
 
 ## Pembahasan
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 
 ---
 
 ## Referensi
 
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#top)
 
 - [BookStack — Website Resmi](https://www.bookstackapp.com/)
 - [BookStack — Dokumentasi Resmi](https://www.bookstackapp.com/docs/)
