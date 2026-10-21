@@ -190,7 +190,7 @@ Setelah berhasil login, pengguna akan diarahkan ke halaman utama BookStack. Pada
 
 <img width="1861" height="967" alt="image" src="https://github.com/user-attachments/assets/60d02c77-cb19-419d-9230-0fc910c9e1f9" />
 
-### 3. Membuat Book
+### 8.3 Membuat Book
 
 Book digunakan sebagai wadah utama untuk mengelompokkan dokumentasi berdasarkan topik tertentu. Misalnya, pengguna dapat membuat satu Book untuk dokumentasi praktikum, panduan aplikasi, atau materi perkuliahan.
 
