@@ -175,7 +175,7 @@ Skrip instalasi mengatur komponen yang dibutuhkan BookStack, termasuk Apache, My
 
 ---
 
-## 8 Cara Penggunaan BookStack
+## 8. Cara Penggunaan BookStack
 
 ### 8.1 Login ke BookStack
 
