@@ -17,7 +17,7 @@ Dokumentasi proyek mata kuliah **Komunikasi Data dan Jaringan Komputer (KDJK)** 
 
 ---
 
-## 15. Anggota Kelompok
+## 1. Anggota Kelompok
 
 | No. | Nama | NIM |
 |---|---|---|
