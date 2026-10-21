@@ -1,6 +1,4 @@
-# Bookstack
-
-Dokumentasi proyek mata kuliah **Komunikasi Data dan Jaringan Komputer (KDJK)** untuk instalasi, konfigurasi, dan deployment BookStack pada VPS agar dapat diakses melalui internet.
+<img width="1920" height="1080" alt="Tulis isi dokumentasi (2)" src="https://github.com/user-attachments/assets/347e2460-d16d-4bb4-8e78-30797d20847e" /># Bookstack
 
 ## Daftar Isi
 
@@ -175,6 +173,8 @@ Jalankan skrip dengan domain atau alamat yang digunakan untuk mengakses aplikasi
 
 Skrip instalasi mengatur komponen yang dibutuhkan BookStack, termasuk Apache, MySQL, PHP, dependensi aplikasi, dan konfigurasi web server.
 
+---
+
 ## 8 Cara Penggunaan BookStack
 
 ### 8.1 Login ke BookStack
@@ -200,7 +200,8 @@ Langkah-langkah:
 3. Masukkan nama Book dan informasi pendukung jika diperlukan.
 4. Simpan Book yang telah dibuat.
 
-<img width="1920" height="1080" alt="Untitled design" src="https://github.com/user-attachments/assets/c18e1db4-0b1a-4e8e-b917-f06aca760d20" />
+<img width="1920" height="1080" alt="Tulis isi dokumentasi (2)" src="https://github.com/user-attachments/assets/0282e65a-c44d-4b48-abc6-eb4c7765e186" />
+
 
 ### 8.4 Membuat Chapter
 
@@ -236,7 +237,7 @@ Langkah-langkah:
 3. Setelah berhasil masuk, pengguna dapat mengakses konten sesuai izin akun.
 4. Untuk membuat dokumentasi, gunakan struktur Books, Chapters, dan Pages.
 
-Kredensial administrator tidak dicantumkan dalam README ini. Gunakan akun yang telah diamankan dan jangan membagikan password melalui repository publik.
+---
 
 ## 10. Keamanan dan Pemeliharaan
 
@@ -250,6 +251,8 @@ Hal-hal yang perlu diperhatikan setelah deployment:
 - Simpan kredensial dan file rahasia di luar repository.
 - Pantau masa berlaku sertifikat dan pastikan auto-renew berjalan.
 - Jangan mengubah konfigurasi Apache, database, atau aplikasi tanpa backup apabila perubahan berisiko mengganggu layanan.
+
+---
 
 ## 11. Dokumentasi dan Referensi
 
