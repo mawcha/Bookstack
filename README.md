@@ -240,8 +240,44 @@ Langkah-langkah:
 
 ## Pembahasan
 
-[`^ kembali ke atas ^`](#top)
+[`^ kembali ke atas ^`](#)
 
+**1. Kelebihan**
+
+1. Antarmuka yang intuitif: Tampilan yang sederhana membantu pengguna membuat dan membaca dokumentasi tanpa harus memahami sintaks wiki yang kompleks.
+
+2. Struktur dokumentasi terorganisir: Konten disusun dalam hierarki Shelf, Book, Chapter, dan Page sehingga informasi lebih mudah dikelompokkan dan dinavigasi.
+
+3. Editor yang mudah digunakan: Mendukung editor visual dan Markdown untuk mempermudah pembuatan serta pengeditan konten.
+
+4. Pengelolaan hak akses: Menyediakan pengaturan peran dan izin pengguna untuk membantu mengontrol akses terhadap konten.
+
+5. Open-source dan dapat di-host sendiri: BookStack dapat digunakan tanpa biaya lisensi aplikasi dan diinstal pada server atau Virtual Machine (VM) milik sendiri.
+
+**2. Kekurangan**
+
+1. Struktur konten relatif kaku: Pengorganisasian konten mengikuti hierarki buku dan halaman sehingga kurang fleksibel untuk beberapa jenis dokumentasi.
+
+2. Kustomisasi lanjutan terbatas: Kebutuhan yang sangat spesifik mungkin memerlukan konfigurasi tambahan atau pengembangan di luar fitur bawaan.
+
+3. Memerlukan pemeliharaan server: Instalasi mandiri membutuhkan pengelolaan pembaruan, pencadangan data (backup), keamanan, dan konfigurasi server.
+
+4. Bergantung pada server: Akses melalui jaringan dan performanya dipengaruhi oleh VM serta resources yang tersedia.
+
+5. Bukan aplikasi manajemen proyek: BookStack berfokus pada dokumentasi dan pengelolaan pengetahuan, bukan pada pengelolaan tugas, jadwal, atau pelacakan progres proyek.
+
+**3. Perbandingan dengan Aplikasi Serupa**
+
+| No. | Aspek | BookStack | Wiki.js | MediaWiki |
+|---|---|---|---|---|
+| 1 | Fungsi Utama | Dokumentasi dan knowledge base terstruktur | Wiki modern dan dokumentasi fleksibel | Wiki dan ensiklopedia |
+| 2 | Struktur Konten | Shelf, Book, Chapter, Page | Halaman wiki fleksibel | Halaman, kategori, namespace, template |
+| 3 | Antarmuka | Sederhana dan intuitif | Modern dan fleksibel | Fungsional dan dapat dikustomisasi |
+| 4 | Editor Konten | Visual editor dan Markdown | Visual editor dan Markdown | Wikitext dan VisualEditor |
+| 5 | Kustomisasi | Cukup untuk dokumentasi umum | Tema, modul, dan integrasi | Ekstensi dan template |
+| 6 | Kelebihan Utama | Struktur jelas dan mudah dipahami | Fleksibel dan modern | Matang dan kaya fitur |
+| 7 | Kekurangan Utama | Struktur relatif kaku | Konfigurasi dapat lebih kompleks | Kustomisasi dapat lebih kompleks |
+| 8 | Contoh Penggunaan | SOP, panduan praktikum, dokumentasi proyek | Dokumentasi teknis dan produk | Ensiklopedia dan wiki komunitas |
 
 ---
 
