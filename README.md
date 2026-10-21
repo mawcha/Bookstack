@@ -2,8 +2,6 @@
 
 ## Daftar Isi
 
-## Daftar Isi
-
 1. [Anggota Kelompok](#1-anggota-kelompok)
 2. [Deskripsi Proyek](#2-deskripsi-proyek)
 3. [Teknologi yang Digunakan](#3-teknologi-yang-digunakan)
