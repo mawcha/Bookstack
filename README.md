@@ -55,20 +55,7 @@ Sistem yang digunakan dalam proyek ini meliputi:
    ```bash
    ssh root@202.10.Kebutuhan Sistem
    ```
-
-   Sistem yang digunakan dalam proyek ini meliputi:
-
-   - VPS dari Rumahweb.
-   - Ubuntu Server 24.04 LTS.
-   - Akses SSH dan hak akses administrator.
-   - Apache sebagai web server.
-   - PHP untuk menjalankan aplikasi BookStack.
-   - MySQL sebagai database.
-   - Domain yang diarahkan ke IP VPS.
-   - Koneksi internet untuk proses instalasi dan akses aplikasi.
-
-   #### 40.194
-
+   
    Sesuaikan username jika server menggunakan akun selain `root`.
 
 2. **Perbarui daftar paket sistem.**
@@ -137,8 +124,6 @@ Setelah instalasi selesai, BookStack dapat dikonfigurasi melalui halaman aplikas
 - **Konfigurasi URL:** alamat aplikasi ditentukan melalui variabel `APP_URL` dalam file `.env`.
 - **Konfigurasi database:** BookStack menggunakan database untuk menyimpan informasi aplikasi. Kredensial database harus dijaga kerahasiaannya dan tidak boleh dicantumkan dalam dokumentasi publik.
 - **Pengaturan pengguna:** administrator dapat mengelola akun dan hak akses agar dokumentasi dapat dikelola sesuai kebutuhan.
-
-Untuk informasi lebih lanjut mengenai pengaturan BookStack, kunjungi [dokumentasi resmi BookStack](https://www.bookstackapp.com/docs/).
 
 ---
 
