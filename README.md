@@ -454,10 +454,11 @@ Hal-hal yang perlu diperhatikan setelah deployment:
 
 | No. | Nama | NIM |
 |---|---|---|
-| 1 | Nama anggota 1 | NIM anggota 1 |
-| 2 | Nama anggota 2 | NIM anggota 2 |
-| 3 | Nama anggota 3 | NIM anggota 3 |
-| 4 | Nama anggota 4 | NIM anggota 4 |
+| 1 | Safira Ayu Damayanti | M0403241010 |
+| 2 | Asty Athetha Loethan | M0403241089 |
+| 3 | Isyana Ajeng Khairani | M0403241096 |
+| 4 | Deswita Diandra | M0403241127 |
+| 5 | Adzkia Muftia Rahman | M0403241153 |
 
 ---
 
